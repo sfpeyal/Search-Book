@@ -61,38 +61,17 @@ const btnClick = () => {
     }
 
 }
-//display found result
+//display found results
 const displayFoundResult = result => {
-    //error clear
-    const errorClear = document.getElementById('error');
-    errorClear.textContent = '';
-    if (typeof (result) !== 'number') {
-        //show-spinner
-        syncSpinner('none');
-
-        //hide-search-result
-        synceSearchResult('none');
-
-        //hide-search-result-found
-        synceSearchResultFound('none');
-
-        const p3 = document.createElement('p');
-        p3.innerHTML = `<p class="fw-bold text-center text-danger fs-1">No Book Found!</p>`
-        errorClear.appendChild(p3);
-        //clear
-        foundResult.textContent = '';
-    }
-    else {
-        const foundResult = document.getElementById('show-result');
-        foundResult.textContent = '';
-        const h1 = document.createElement('h1');
-        h1.classList.add('text-secondary');
-        h1.innerHTML = `Books Found! ${result}
+    const foundResult = document.getElementById('show-result');
+    foundResult.textContent = '';
+    const h1 = document.createElement('h1');
+    h1.classList.add('text-secondary');
+    h1.innerHTML = `Books Found! ${result}
     `;
-        foundResult.appendChild(h1);
-        //show-search-result-found
-        synceSearchResultFound('block');
-    }
+    foundResult.appendChild(h1);
+    synceSearchResultFound('block');
+
 }
 
 //display found books
