@@ -47,7 +47,7 @@ const btnClick = () => {
 
         //hide-search-result-found
         synceSearchResultFound('none');
-        const url = `http://openlibrary.org/search.json?q=${inputText}`;
+        const url = `https://openlibrary.org/search.json?q=${inputText}`;
 
         // result found
         fetch(url)
@@ -58,9 +58,6 @@ const btnClick = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => displayBooks(data.docs))
-        // .then(data => console.log(data.docs.length))
-
-
     }
 
 }
